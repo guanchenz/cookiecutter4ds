@@ -1,6 +1,10 @@
 # cookiecutter4ds
 
-Simple cookiecutter for data science project
+Simple cookiecutter for data science project.
+
+Author: guanchenz
+
+Created: Nov. 19, 2017
 
 ## Project template
 
