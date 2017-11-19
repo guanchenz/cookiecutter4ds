@@ -13,6 +13,7 @@
 # load utility functions
 source ./utils/create_license.sh
 source ./utils/create_readme.sh
+source ./utils/arts.sh
 
 CURRENT_DIR="$PWD"
 PARENT_DIR="$(dirname "$CURRENT_DIR")"
@@ -21,7 +22,11 @@ PARENT_DIR="$(dirname "$CURRENT_DIR")"
 FOLDERS=("data" "doc" "results" "src")
 FILES=("CITATION" "README.md" "LICENSE")
 
-echo -n "Creating new DSCI project in $PARENT_DIR ... Continue? [y/n]: "
+# welcome ascii arts
+welcome
+
+echo "Creating new DSCI project in $PARENT_DIR..."
+echo -n "Continue? [y/n]: "
 read CONFIRM
 
 if [ $CONFIRM = "y" ]
@@ -73,15 +78,19 @@ then
             # create README
             create_readme "$PROJECT_NAME" "$PROJECT_DIR" "$DESC"
             
-            echo "Project created successfully."
+            # success ascii arts
+            success
 
+            echo "Project created successfully."
             echo "------------------------------------------------------"
             echo "What now?"
             echo "Enter the following commands to view your new project:"
+            echo ""
             echo "cd $PROJECT_DIR"
             echo "ls"
             echo "------------------------------------------------------"
         else
+            echo "Oops ..."
             echo "Something went wrong when creating the project folder."
         fi
     else
